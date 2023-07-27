@@ -26,4 +26,19 @@ public class ProductServiceImpl implements IProductService {
         return product;
     }
 
+    @Override
+    public List<Product> findByNameContains(String name) {
+        return productRepository.findByNameContains(name);
+    }
+
+    @Override
+    public List<Product> findByPriceBetween(double minPrice, double maxPrice) {
+        return productRepository.findByPriceBetween(minPrice, maxPrice);
+    }
+
+    @Override
+    public List<Product> findByRegisterDateBetween(LocalDate startDate, LocalDate endDate) {
+        return productRepository.findByRegisterDateBetween(startDate, endDate);
+    }
+
 }

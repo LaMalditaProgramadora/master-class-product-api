@@ -8,5 +8,7 @@ import java.util.List;
 public interface IProductService {
     List<Product> findAll();
     Product save(Product product);
-
+    List<Product> findByNameContains(String name);
+    List<Product> findByPriceBetween(double minPrice, double maxPrice);
+    List<Product> findByRegisterDateBetween(LocalDate startDate, LocalDate endDate);
 }
